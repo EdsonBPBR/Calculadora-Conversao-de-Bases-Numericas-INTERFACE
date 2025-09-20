@@ -1,0 +1,56 @@
+#navbar {
+    margin: auto;
+    width: 95%;
+}
+
+body {
+    background-color: rgba(228, 228, 228, 0.856);
+}
+
+main {
+    padding-top: 60px; 
+    margin: auto;
+    width: 95%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;  
+    z-index: 1000;
+}
+
+#logo_nome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+#logo_nome img {
+    height: 50px;
+    width: auto;
+}
+
+#logo_nome p {
+    margin: 0;
+}
+
+
+footer {
+    text-align: center;
+}
+
+.nome_sistema_cell {
+    display: none;
+}
+
+@media screen and (max-width:412px) {
+    .nome_sistema {
+        display: none;
+    }
+
+    .nome_sistema_cell {
+        display: block;
+    }
+}
