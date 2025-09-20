@@ -19,3 +19,4 @@ def decimalBinario(decimal):
 
 # decimal = int(input())
 # print(decimalBinario(decimal))
+# print(type(decimalBinario(decimal)))
