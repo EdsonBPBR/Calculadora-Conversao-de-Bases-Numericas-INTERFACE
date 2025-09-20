@@ -1,0 +1,5 @@
+venv-calculadora
+__init__.py
+*.pyc
+__pycache__
+conexao_bd.py
