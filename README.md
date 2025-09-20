@@ -1,5 +1,4 @@
-# Calculadora de Conversões de Bases Numéricas com Interface
-====
+# Calculadora de Conversões de Bases Numéricas com Interface Web
 
 O presente software é uma continuação de um pequeno projeto desenvolvido na linguagem de programação Python3.10 da disciplina de Introdução Algoritmos e Programação de Computadores (APC) complementado com Interface Gráfica Web
 
@@ -29,7 +28,6 @@ O Sistema de Conversão de Bases Numéricas, assunto seriamente abordado na disc
     * PythonAnyWhere
     * Linux
 
-====
 EDSON BARROS PONCIÚNCULA
 
 UNIVERSIDADE FEDERAL DE ALAGOAS
