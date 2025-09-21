@@ -9,6 +9,17 @@
 {% endblock %}
 
 {% block conteudo_main %}
+<!-- sistemas de alerta -->
+{% if messages %}
+<div id="alertas">
+    {% for message in messages %}
+    <div class="alert alert-warning">
+        <i class="bi bi-exclamation-triangle-fill"></i> {{ message }} Dúvidas? Acesse: <a href="#"
+            class="alert-link">documentação</a>.
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
 
 <div class="container-fluid shadow-sm p-3 mb-5 bg-body-tertiary rounded text-center" id="container_principal">
     <div>
@@ -29,7 +40,8 @@
                 <div class="mb-3 row">
                     <label for="decimal" class="col-sm-2 col-form-label">Decimal:</label>
                     <div class="col-sm-10">
-                        <input name="decimal" type="number" min="0" step="1" class="form-control" id="decimal">
+                        <input name="decimal" type="number" pattern="[0123456789]*" min="0" step="1"
+                            class="form-control" id="decimal">
                     </div>
                 </div>
 
@@ -43,9 +55,18 @@
 
                 <!-- hexadecimal  -->
                 <div class="mb-3 row">
-                    <label for="hexadecimal" class="col-sm-2 col-form-label">hexadecimal: </label>
+                    <label for="hexadecimal" class="col-sm-2 col-form-label">Hexadecimal: </label>
                     <div class="col-sm-10">
-                        <input name="hexadecimal" pattern="[0123456789ABCDEF]*" type="text" class="form-control" id="binario">
+                        <input name="hexadecimal" pattern="[0123456789ABCDEFabcdef]*" type="text" class="form-control"
+                            id="hexadecimal">
+                    </div>
+                </div>
+
+                <!-- octal  -->
+                <div class="mb-3 row">
+                    <label for="octal" class="col-sm-2 col-form-label">Octal: </label>
+                    <div class="col-sm-10">
+                        <input name="octal" pattern="[01234567]*" type="text" class="form-control" id="octal">
                     </div>
                 </div>
 
@@ -75,10 +96,17 @@
             </div>
 
             <div class="mb-3 row">
-                <label for="resultado_hexadecimal" class="col-sm-2 col-form-label">Hexadecimal: </label>
+                <label for="resultado_hexadecimal" class="col-sm-2 col-form-label">Hexad.: </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" value="{{ hexadecimal }}" id="resultado_hexadecimal" readonly
-                        disabled>
+                    <input type="text" class="form-control" value="{{ hexadecimal }}" id="resultado_hexadecimal"
+                        readonly disabled>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="resultado_octal" class="col-sm-2 col-form-label">Octal: </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" value="{{ octal }}" id="resultado_octal" readonly disabled>
                 </div>
             </div>
 
@@ -86,7 +114,96 @@
                 <button type="reset" class="btn btn-success"><i class="bi bi-clipboard-check-fill"></i> Copiar</button>
             </div>
         </div>
-
     </div>
 </div>
+
+<!-- tabela de equivalencia -->
+<section class="shadow-sm p-3 mb-5 bg-body-tertiary rounded">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th colspan="17" scope="col">Tabela de Equivalências</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Decimal</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td scope="row">Binário</td>
+                <td>0</td> 
+                <td>1</td>
+                <td>10</td>
+                <td>11</td>
+                <td>100</td>
+                <td>101</td>
+                <td>110</td>
+                <td>111</td>
+                <td>1000</td>
+                <td>1001</td>
+                <td>1010</td>
+                <td>1011</td>
+                <td>1100</td>
+                <td>1101</td>
+                <td>1110</td>
+                <td>1111</td>
+            </tr>
+            <tr>
+                <td scope="row">Hexadecimal</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+                <td>F</td>
+            </tr>
+            <tr>
+                <td scope="row">Octal</td>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>
 {% endblock %}
