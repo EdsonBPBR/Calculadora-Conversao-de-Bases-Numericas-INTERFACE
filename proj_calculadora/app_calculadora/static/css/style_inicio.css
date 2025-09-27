@@ -43,3 +43,9 @@
 .fade-out {
   animation: fadeOut 0.5s ease forwards;
 }
+
+@media screen and (max-width: 900px) {
+  #tabela_referencias{
+    display: none;
+  }
+}
